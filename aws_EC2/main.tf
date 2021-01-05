@@ -11,6 +11,8 @@ resource "aws_instance" "ec2-mod" {
 resource "aws_security_group" "secgrp" {
   name = var.fwname
 
+//Dynamic Port Selection
+
   dynamic "ingress" {
     for_each = var.ingressmap
     content {
